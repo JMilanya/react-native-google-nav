@@ -45,7 +45,7 @@
   "scripts": {
     "example": "bun run --filter react-native-google-nav-example",
     "clean": "del-cli lib plugin/build",
-    "prepare": "bob build && tsc --project plugin/tsconfig.json",
+    "prepack": "bob build && tsc --project plugin/tsconfig.json",
     "build": "bob build",
     "build:plugin": "tsc --project plugin/tsconfig.json",
     "typecheck": "tsc",
