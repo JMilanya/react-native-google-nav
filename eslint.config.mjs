@@ -13,9 +13,13 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
+const baseConfigs = fixupConfigRules(
+  compat.extends('@react-native', 'prettier')
+);
+
 export default [
+  ...baseConfigs,
   {
-    extends: fixupConfigRules(compat.extends('@react-native', 'prettier')),
     plugins: { prettier },
     rules: {
       'react/react-in-jsx-scope': 'off',
