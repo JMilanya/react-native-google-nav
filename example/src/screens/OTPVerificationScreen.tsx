@@ -44,7 +44,7 @@ export default function OTPVerificationScreen({ navigation, route }: Props) {
         // await supabase.from('delivery_otps').insert({ order_id, otp: code, expires_at: expiresAt });
         console.log(`[OTP] Generated code ${code} for stop #${_wpIndex + 1}, expires ${expiresAt}`);
         // Simulating backend delay
-        await new Promise((r) => setTimeout(r, 500));
+        await new Promise((r) => setTimeout(r, 500));     
       },
       onVerify: async (_wpIndex, code) => {
         // In a real app: validate with your backend
