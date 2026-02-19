@@ -64,4 +64,6 @@ android {
 
 dependencies {
   implementation "com.facebook.react:react-android"
+  implementation "com.google.android.libraries.navigation:navigation:7.1.0"
+  implementation "com.google.android.gms:play-services-location:21.3.0"
 }

@@ -7,6 +7,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GoogleNavView : RCTViewComponentView
+
 @end
 
 NS_ASSUME_NONNULL_END

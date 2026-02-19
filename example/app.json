@@ -14,7 +14,12 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "googlenav.example"
+      "bundleIdentifier": "com.googlenav.example",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs your location for turn-by-turn navigation.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs background location for navigation.",
+        "UIBackgroundModes": ["location"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -22,10 +27,29 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "googlenav.example"
+      "package": "com.googlenav.example",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ]
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "plugins": [
+      [
+        "react-native-google-nav/expo-plugin",
+        {
+          "androidApiKey":"YOUR_ANDROID_API_KEY",
+          "iosApiKey":"YOUR_IOS_API_KEY"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location for navigation."
+        }
+      ]
+    ]
   }
 }
