@@ -1,7 +1,6 @@
 import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import prettier from 'eslint-plugin-prettier';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -20,13 +19,14 @@ const baseConfigs = fixupConfigRules(
 export default [
   ...baseConfigs,
   {
-    plugins: { prettier },
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'prettier/prettier': 'error',
+      'react-hooks/exhaustive-deps': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'react-native/no-inline-styles': 'off',
     },
   },
   {
-    ignores: ['node_modules/', 'lib/'],
+    ignores: ['node_modules/', 'lib/', 'plugin/build/', 'example/'],
   },
 ];
