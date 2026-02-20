@@ -79,6 +79,15 @@ Or with yarn:
 yarn add JMilanya/react-native-google-nav
 ```
 
+**GitHub installs build from source.** During install, npm/yarn/pnpm run this package’s `prepare` script (`bob build && tsc`) to generate `lib/` and `plugin/build/`. That requires the package’s devDependencies (notably `react-native-builder-bob` and `typescript`) and install scripts must be allowed. If scripts are blocked (e.g., `--ignore-scripts`), the Expo plugin won’t load. Bun users must trust the package first (see below).
+
+### Install from GitHub (Bun)
+
+```sh
+bun pm trust react-native-google-nav
+bun add JMilanya/react-native-google-nav
+```
+
 ### Peer Dependencies
 
 ```sh
